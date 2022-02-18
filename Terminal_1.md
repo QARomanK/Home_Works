@@ -49,50 +49,48 @@
 ` cd ../ `
 
 13 Переместить любые 2 файла, которые вы создали, в любую другую папку :
-```
-  mv papka2/f1.txt papka1/f1.txt 
-  mv papka2/f4.json papka1/f4.json
-```
+  
+  `mv papka2/f1.txt papka1/f1.txt` 
+  
+  `mv papka2/f4.json papka1/f4.json`
+
 или 
 
-```
-  mv papka2/{f1.txt,f4.json} papka1
-``` 
+ `mv papka2/{f1.txt,f4.json} papka1`
 
 14 Скопировать любые 2 файла, которые вы создали, в любую другую папку :
-```
-  cp papka2/f2.txt papka3/f2.txt
-  cp papka2/f5.json papka3/f5.json
-```
+
+  `cp papka2/f2.txt papka3/f2.txt` 
+
+  `cp papka2/f5.json papka3/f5.json`
+
 или  
 
-```
-  cp papka2/{f2.txt,f5.json} papka3
-```
+ `cp papka2/{f2.txt,f5.json} papka3`
+
 15 Найти файл по имени : 
 
-` find papka2 -name f2.txt (papka2/f2.txt) `
+ `find papka2 -name f2.txt (papka2/f2.txt)`
 
 16 Просмотреть содержимое в реальном времени : 
 
-`tail -f f2.txt `
+ `tail -f f2.txt`
 
 17 Вывести несколько первых строк из текстового файла : 
 
-`head -3 papka2/f2.txt`
+ `head -3 papka2/f2.txt`
 
 18 Вывести несколько последних строк из текстового файла : 
 
-`cat papka2/f2.txt | tail -n 3 `
+ `cat papka2/f2.txt | tail -n 3 `
 
 19 Просмотреть содержимое длинного файла : 
 
-` cat papka2/f6.txt | less `
+ `cat papka2/f6.txt | less `
 
 20 Вывести дату и время :
 
-`date `
-
+`date`
 
 # Задание *
 
