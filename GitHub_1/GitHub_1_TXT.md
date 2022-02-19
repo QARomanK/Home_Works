@@ -2,7 +2,7 @@
 
  1. Создать внешний репозиторий c названием TXT
  
-     `https://github.com/QARomanK/TXT.git`
+     [`https://github.com/QARomanK/TXT.git`](https://github.com/QARomanK/TXT.git)
 
  2. Клонировать репозиторий TXT на локальный компьютер 
 
