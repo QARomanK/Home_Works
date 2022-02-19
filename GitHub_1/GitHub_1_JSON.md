@@ -3,7 +3,7 @@
 
  1. Создать внешний репозиторий c названием JSON
  
-	[`https://github.com/QARomanK/JSON.git`]()
+	[`https://github.com/QARomanK/JSON.git`](https://github.com/QARomanK/JSON.git)
 
  2. Клонировать репозиторий JSON на локальный компьютер 
 
