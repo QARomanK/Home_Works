@@ -27,7 +27,7 @@
 
 	или
 
-	`git commit -am "Commit new.json file"
+	`git commit -am "Commit new.json file"`
 
  6. Отправить файл на внешний GitHub репозиторий
 
@@ -57,11 +57,9 @@
  
 	 `vim sklls.json`
 
-	 `git add .`
-
  12. Сделать коммит в одну строку.
 
-	 `git commit -am "Third commit JSON"`
+	 `git add . | git commit -m "Third commit JSON"`
 
  13. Отправить сразу 2 файла на внешний репозиторий.
 
