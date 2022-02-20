@@ -52,11 +52,9 @@
  
      `vim sklls.xml`
  
-     `git add .`
- 
  12. Сделать коммит в одну строку
 
-     `git commit -am "Third commit"`
+     `git add . | git commit -am "Third commit"`
 
  13. Отправить сразу 2 файла на внешний репозиторий
 
