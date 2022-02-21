@@ -55,6 +55,14 @@
  12. Сделать коммит в одну строку
 
      `git add . | git commit -am "Third commit"`
+     
+     или
+     
+     `git add . ; git commit -m "Third commit"`
+     
+     или
+     
+     `git add . && git commit -m "Third commit"`
 
  13. Отправить сразу 2 файла на внешний репозиторий
 
