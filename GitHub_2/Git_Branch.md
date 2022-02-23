@@ -54,6 +54,14 @@
  
   `git add . | git commit -m "add bag_report.txt"`
   
+  или
+  
+  `git add . && git commit -m "add bag_report.txt"`
+  
+  или
+  
+  `git add .  git commit -m "add bag_report.txt"`
+  
   `git push`
   
 5 Вмержить ветку Bag Reports в Main
@@ -67,6 +75,8 @@
    `git push`
 
 7 В ветке CheckLists набросать структуру чек листа.
+
+   `git checkout CheckList`
 
    `touch check_list.txt`
 	
@@ -88,5 +98,7 @@
    `Pull Request > New pull request > base:main << compare:CheckList`
  
 10 Синхронизировать Внешнюю и Локальную ветки Main
-
+   
+   `git checkout main`
+   
    `git pull`
