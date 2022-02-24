@@ -1,43 +1,52 @@
-Protocol: http
-IP: 162.55.220.72
-Port: 5005
+# Protocol: http IP:162.55.220.72 Port: 5005
 
-EP_1
-Method: GET
-EndPoint: /get_method
-request url params: 
- name: str
- age: int
+**EP_1** <br>
+Method: GET <br>
+EndPoint: /get_method <br>
+request url params: <br>
+ name: str <br>
+ age: int <br>
+ 
+**response:**
 
-response: 
+```
 [
     “Str”,
     “Str”
 ]
+```
+**result:**
 
+```
 http://162.55.220.72:5005/get_method?name=Roman&age=33
+
+Responnse:
 
 [
     "Roman",
     "33"
 ]
-==================
+```
+***
 
-EP_2
-Method: POST
-EndPoint: /user_info_3
-request form data: 
- name: str
- age: int
- salary: int
+**EP_2** <br>
+Method: POST <br>
+EndPoint: /user_info_3 <br>
+request form data: <br>
+ name: str <br>
+ age: int <br>
+ salary: int <br>
 
-response: 
-{'name': name,
-          'age': age,
-          'salary': salary,
-          'family': {'children': [['Alex', 24], ['Kate', 12]],
+**response:** <br> 
+```
+{'name': name,<br>
+'age': age,<br>
+          'salary': salary,<br>
+          'family': {'children': [['Alex', 24], ['Kate', 12]],<br>
                      'u_salary_1_5_year': salary * 4}}
-
+```
+**result:**
+```
 http://162.55.220.72:5005/user_info_3?name=Max&age=24&salary=2150
 
 {
@@ -58,22 +67,26 @@ http://162.55.220.72:5005/user_info_3?name=Max&age=24&salary=2150
     "name": "Max",
     "salary": 2150
 }
-==================
+```
+***
 
-EP_3
-Method: GET
-EndPoint: /object_info_1
-request url params: 
- name: str
- age: int
- weight: int
+**EP_3** <br>
+Method: GET <br>
+EndPoint: /object_info_1 <br>
+request url params: <br>
+ name: str <br>
+ age: int <br>
+ weight: int <br>
 
-response: 
+**response:** 
+```
 {'name': name,
           'age': age,
           'daily_food': weight * 0.012,
           'daily_sleep': weight * 2.5}
-
+```
+**result:** 
+```
 http://162.55.220.72:5005/object_info_1?name=Oleg&age=38&weight=74
 
 {
@@ -82,17 +95,19 @@ http://162.55.220.72:5005/object_info_1?name=Oleg&age=38&weight=74
     "daily_sleep": 185.0,
     "name": "Oleg"
 }
-==================
+```
+***
 
-EP_4
-Method: GET
-EndPoint: /object_info_2
-request url params: 
- name: str
- age: int
- salary: int
+**EP_4** <br>
+Method: GET <br>
+EndPoint: /object_info_2 <br>
+request url params: <br>
+ name: str <br>
+ age: int <br>
+ salary: int <br>
 
-response: 
+**response:** 
+```
 {'start_qa_salary': salary,
           'qa_salary_after_6_months': salary * 2,
           'qa_salary_after_12_months': salary * 2.7,
@@ -102,7 +117,9 @@ response:
                      'u_age': age,
                      'u_salary_5_years': salary * 4.2}
           }
-
+```
+**result:**
+```
 http://162.55.220.72:5005/object_info_2?name=Polina&age=27&salary=1200
 
 {
@@ -121,20 +138,19 @@ http://162.55.220.72:5005/object_info_2?name=Polina&age=27&salary=1200
     "qa_salary_after_6_months": 2400,
     "start_qa_salary": 1200
 }
+```
+***
 
+**EP_5** <br>
+Method: GET <br>
+EndPoint: /object_info_3 <br>
+request url params: <br>
+ name: str <br>
+ age: int <br>
+ salary: int <br>
 
-
-==================
-
-EP_5
-Method: GET
-EndPoint: /object_info_3
-request url params: 
- name: str
- age: int
- salary: int
-
-response: 
+**response:** 
+```
 {'name': name,
           'age': age,
           'salary': salary,
@@ -145,7 +161,10 @@ response:
                                      'age': 4}},
                      'u_salary_1_5_year': salary * 4}
           }
+```
 
+**result:**
+```
 http://162.55.220.72:5005/object_info_3?name=Victor&age=48&salary=2780
 
 {
@@ -176,21 +195,27 @@ http://162.55.220.72:5005/object_info_3?name=Victor&age=48&salary=2780
     "name": "Victor",
     "salary": 2780
 }
-==================
 
-EP_6
-Method: GET
-EndPoint: /object_info_4
-request url params: 
- name: str
- age: int
- salary: int
+```
+***
 
-response: 
+**EP_6** <br>
+Method: GET <br>
+EndPoint: /object_info_4 <br>
+request url params: <br>
+ name: str <br>
+ age: int <br>
+ salary: int <br>
+
+**response:** 
+```
 {'name': name,
           'age': int(age),
           'salary': [salary, str(salary * 2), str(salary * 3)]}
+```
 
+**result:** 
+```
 http://162.55.220.72:5005/object_info_4?name=Alex&age=45&salary=1280
 
 {
@@ -202,18 +227,19 @@ http://162.55.220.72:5005/object_info_4?name=Alex&age=45&salary=1280
         "3840"
     ]
 }
+```
+***
 
-==================
+**EP_7** <br>
+Method: POST <br>
+EndPoint: /user_info_2 <br>
+request form data: <br>
+ name: str <br>
+ age: int <br>
+ salary: int <br>
 
-EP_7
-Method: POST
-EndPoint: /user_info_2
-request form data: 
- name: str
- age: int
- salary: int
-
-response: 
+**response:** 
+```
 {'start_qa_salary': salary,
           'qa_salary_after_6_months': salary * 2,
           'qa_salary_after_12_months': salary * 2.7,
@@ -224,7 +250,9 @@ response:
                      'u_salary_5_years': salary * 4.2}
           }
 		  
-		  
+```
+**result:** 
+```
  http://162.55.220.72:5005/user_info_2?name=Irina&age=22&salary=800
 		  
 		  
@@ -244,3 +272,4 @@ response:
     "qa_salary_after_6_months": 1600,
     "start_qa_salary": 800
 } 
+```
