@@ -1,3 +1,44 @@
+# Postman Home Work 2
+
+### http://162.55.220.72:5005/first
+
+### Отправить запрос.
+```
+pm.sendRequest("https://postman-echo.com/get", function (err, response) {
+    console.log(response.json());
+});
+```
+### Статус 200.
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+```
+### Проверить, что в body приходит правильный string.
+```
+pm.test("Body is correct", function () {
+    pm.response.to.have.body("This is the first responce from server!");
+});
+```
+***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###  http://162.55.220.72:5005/object_info_3
 
 Статус код 200
