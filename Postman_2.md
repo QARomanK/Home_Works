@@ -30,6 +30,10 @@ pm.test("Check_DogAge", function () {
 });
 
 pm.test("Check_DogName", function () {
-    pm.expect(jsonData.family.pets.dog.name).to.be.oneOf(["Lucy"]);
+    pm.expect(jsonData.family.pets.dog.name).to.be.oneOf(["Luky"]);
+});
+
+pm.test("Check_Mening_of_DogAge", function () {
+    pm.expect(jsonData.family.pets.dog.age).to.be.oneOf([4]);
 });
 ```
