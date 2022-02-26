@@ -1,10 +1,16 @@
+###  http://162.55.220.72:5005/object_info_3
+
+Статус код 200
 ```
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
-
+```
+Спарсить response body в json.
+```
     var jsonData = pm.response.json();
-      
+```
+```
     var req =  request.data ;
 
 pm.test("Check_name", function () {
