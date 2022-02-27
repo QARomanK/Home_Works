@@ -184,78 +184,113 @@ pm.test("Check_Mening_of_DogAge", function () {
 
 ### GET http://162.55.220.72:5005/object_info_4
 
-//Отправить запрос.
+### Отправить запрос.
+```
 pm.sendRequest("https://postman-echo.com/get", function (err, response) {
     console.log(response.json());
 });
+```
 
-//Статус код 200
+### Статус код 200
+```
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
+```
 
-//Спарсить response body в json.
+### Спарсить response body в json.
+```
    var jsonData = pm.response.json();
+```
 
-//Спарсить request.
+### Спарсить request.
+```
     var req = pm.request.url.query.toObject();
     var age = parseInt(req.age);
     var sal = parseInt(req.salary);
+```
 
-//Проверить, что name в ответе равно name s request (name забрать из request.)
+### Проверить, что name в ответе равно name s request (name забрать из request.)
+```
 pm.test("Check_name", function () {
     pm.expect(jsonData.name).to.eql(req.name);
 });
+```
 
-// Проверить, что age в ответе равно age из request (age забрать из request.)
+### Проверить, что age в ответе равно age из request (age забрать из request.)
+```
 pm.test("Check_age", function () {
     pm.expect(jsonData.age).to.eql(age);
 });
+```
 
-// Вывести в консоль параметр salary из request.
+### Вывести в консоль параметр salary из request.
+```
 console.log(req.salary);
+```
 
-// Вывести в консоль параметр salary из response.
+### Вывести в консоль параметр salary из response.
+```
 console.log(jsonData.salary);
+```
 
-// Вывести в консоль 0-й элемент параметра salary из response.
+### Вывести в консоль 0-й элемент параметра salary из response.
+```
 console.log(jsonData.salary[0]);
+```
 
-// Вывести в консоль 1-й элемент параметра salary параметр salary из response. 
+### Вывести в консоль 1-й элемент параметра salary параметр salary из response. 
+```
 console.log(jsonData.salary[1]);
+```
 
-// Вывести в консоль 2-й элемент параметра salary параметр salary из response. 
+### Вывести в консоль 2-й элемент параметра salary параметр salary из response. 
+```
 console.log(jsonData.salary[2]);
+```
 
-// Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
+### Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
+```
 pm.test("Compare items salary", function () {
     
     pm.expect(jsonData.salary[0]).to.eql(sal);
 });
+```
 
-// Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)
+### Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)
+```
 pm.test("Compare items salary", function () {
     var JsonSal = parseInt(jsonData.salary[1]);
     pm.expect(JsonSal).to.eql(sal*2);
 });
+```
 
-// Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
+### Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
+```
 pm.test("Compare items salary", function () {
     var JsonSal = parseInt(jsonData.salary[2]);
     pm.expect(JsonSal).to.eql(sal*3);
 });
+```
 
-// Передать в окружение переменную name
+### Передать в окружение переменную name
+```
 pm.environment.set("name", req.name);
+```
 
-// Передать в окружение переменную age
+### Передать в окружение переменную age
+```
 pm.environment.set("age", req.age);
+```
 
-// Передать в окружение переменную salary
+### Передать в окружение переменную salary
+```
 pm.environment.set("salary", req.salary);
+```
 
-// Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
-
+### Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
+```
 for (var i = 0; i < 2; i++) {
     console.log (jsonData.salary[i]);
 }
+```
