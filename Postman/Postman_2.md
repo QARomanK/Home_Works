@@ -93,7 +93,7 @@ pm.test("Chech_requstSalary", function () {
 
 ### Вывести в консоль параметр family из response.
 ```
-console.log(req.family);
+console.log(jsonData.family);
 ```
 
 ### Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
