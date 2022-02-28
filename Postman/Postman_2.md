@@ -290,7 +290,7 @@ pm.environment.set("salary", req.salary);
 
 ### Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
 ```
-for (var i = 0; i < 2; i++) {
+for (var i = 0; i < jsonData.salary.length; i++) {
     console.log (jsonData.salary[i]);
 }
 ```
