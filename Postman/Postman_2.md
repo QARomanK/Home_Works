@@ -93,7 +93,7 @@ pm.test("Chech_requstSalary", function () {
 
 ### Вывести в консоль параметр family из response.
 ```
-console.log(req.family);
+console.log(jsonData.family);
 ```
 
 ### Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
@@ -174,10 +174,23 @@ pm.test("Check_DogName", function () {
     pm.expect(jsonData.family.pets.dog.name).to.be.oneOf(["Luky"]);
 });
 ```
+
+#### или так:
+```
+pm.test("Check_DogName_2", function () {
+    pm.expect(jsonData.family.pets.dog.name).to.eql("Luky");
+});
+```
 ### Проверить, что параметр age имеет значение 4.
 ```
 pm.test("Check_Mening_of_DogAge", function () {
     pm.expect(jsonData.family.pets.dog.age).to.be.oneOf([4]);
+});
+```
+#### или так:
+```
+pm.test("Check_Mening_of_DogAge_2", function () {
+    pm.expect(jsonData.family.pets.dog.age).to.eql(4);
 });
 ```
 ***
@@ -253,7 +266,7 @@ console.log(jsonData.salary[2]);
 ```
 pm.test("Compare items salary", function () {
     
-    pm.expect(jsonData.salary[0]).to.eql(sal);
+    pm.expect(jsonData.salary[0]).to.eql(+req.salary);
 });
 ```
 
@@ -290,7 +303,7 @@ pm.environment.set("salary", req.salary);
 
 ### Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
 ```
-for (var i = 0; i < 2; i++) {
+for (var i = 0; i < jsonData.salary.length; i++) {
     console.log (jsonData.salary[i]);
 }
 ```
