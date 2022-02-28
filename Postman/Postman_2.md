@@ -307,3 +307,22 @@ for (var i = 0; i < jsonData.salary.length; i++) {
     console.log (jsonData.salary[i]);
 }
 ```
+***
+
+### POST http://162.55.220.72:5005/user_info_2
+
+### Вставить параметр salary из окружения в request
+
+```
+KEY:salary Value:{{salary}}
+```
+### Вставить параметр age из окружения в age
+
+```
+KEY:age Value:{{age}}
+```
+### Вставить параметр name из окружения в name
+
+```
+KEY:name Value:{{name}}
+```
