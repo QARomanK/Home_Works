@@ -416,7 +416,6 @@ pm.test("Compare property_u_salary_5_years", function () {
 
 ### Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
 ```
-var i = 0;
 for (i in jsonData.person){ 
     console.log("property:", i );
 };
