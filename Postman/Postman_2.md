@@ -326,9 +326,6 @@ KEY:age Value:{{age}}
 ```
 KEY:name Value:{{name}}
 ```
-***
-
-### POST http://162.55.220.72:5005/user_info_2
 
 ### Отправить запрос
 ```
@@ -343,11 +340,16 @@ pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 ```
-// Спарсить response body в json
-var jsonData = pm.response.json();
 
-// Спарсить request
+### Спарсить response body в json
+```
+var jsonData = pm.response.json();
+```
+
+### Спарсить request
+```
 var req = request.data;
+```
 
 // Проверить, что json response имеет параметр start_qa_salary
 pm.test("Check property start_qa_salary", function () {
