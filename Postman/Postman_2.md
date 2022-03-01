@@ -413,3 +413,10 @@ pm.test("Compare property_u_age", function () {
 pm.test("Compare property_u_salary_5_years", function () {
     pm.expect(jsonData.person.u_salary_5_years).to.eql(req.salary*4.2);
 });
+
+### Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
+```
+for (let i in jsonData.person){ 
+    console.log("property:", i, "value:", jsonData.person[i]);
+};
+```
