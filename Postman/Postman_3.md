@@ -156,3 +156,4 @@ pm.test('Schema is valid', function () {
     pm.response.to.have.jsonSchema(schema);
 });
 ```
+***
