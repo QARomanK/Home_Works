@@ -73,87 +73,62 @@ pm.test("Status code is 200", function () {
 
 ```
 var schema = {
-	"definitions": {},
-	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1646764458.json", 
-	"title": "Root", 
-	"type": "object",
-	"required": [
-		"person",
-		"qa_salary_after_12_months",
-		"qa_salary_after_6_months",
-		"start_qa_salary"
-	],
-	"properties": {
-		"person": {
-			"$id": "#root/person", 
-			"title": "Person", 
-			"type": "object",
-			"required": [
-				"u_age",
-				"u_name",
-				"u_salary_1_5_year"
-			],
-			"properties": {
-				"u_age": {
-					"$id": "#root/person/u_age", 
-					"title": "U_age", 
-					"type": "integer",
-					"examples": [
-						32
-					],
-					"default": 0
-				},
-				"u_name": {
-					"$id": "#root/person/u_name", 
-					"title": "U_name", 
-					"type": "array",
-					"default": []
-				},
-				"u_salary_1_5_year": {
-					"$id": "#root/person/u_salary_1_5_year", 
-					"title": "U_salary_1_5_year", 
-					"type": "integer",
-					"examples": [
-						5000
-					],
-					"default": 0
-				}
-			}
-		}
-,
-		"qa_salary_after_12_months": {
-			"$id": "#root/qa_salary_after_12_months", 
-			"title": "Qa_salary_after_12_months", 
-			"type": "integer",
-			"examples": [
-				3625
-			],
-			"default": 0
-		},
-		"qa_salary_after_6_months": {
-			"$id": "#root/qa_salary_after_6_months", 
-			"title": "Qa_salary_after_6_months", 
-			"type": "integer",
-			"examples": [
-				2500
-			],
-			"default": 0
-		},
-		"start_qa_salary": {
-			"$id": "#root/start_qa_salary", 
-			"title": "Start_qa_salary", 
-			"type": "integer",
-			"examples": [
-				1250
-			],
-			"default": 0
-		}
-	}
-};
+    "$schema": "http://json-schema.org/draft-04/schema#",
+     "type":"object",
+     "properties":{
+         "person":{
+             "type":"object",
+             "title":"person",
+             "properties": {
+                 "u_age": {
+                 "type":"number",
+                 "title":"u_age"
+                 },
+                 "u_name":{
+                     "type":"array",
+                     "title":"u_name",
+                     "items":[
+                         {"type":"string"},
+                         {"type":"number"},
+                         {"type":"number"}
+                     ]
+                     },
+                    "u_salary_1_5_year":{
+                        "type":"number",
+                        "title":"u_salary_1_5_year"
+                        }
+                    },
+                 "required": [
+                        "u_age",
+                        "u_name",
+                        "u_salary_1_5_year"
+                    ]
+             },
+             "qa_salary_after_12_months":{
+                 "type":"number",
+                 "title":"qa_salary_after_12_months"
+             },
+             "qa_salary_after_6_months":{
+                 "type":"number",
+                 "title":"qa_salary_after_6_months"
+             },
+             "start_qa_salary":{
+                 "type":"number",
+                 "title":"start_qa_salary"
+             }
+         },
+           "required": [
+                "person",
+                "qa_salary_after_12_months",
+                "qa_salary_after_6_months",
+                "start_qa_salary"
+            ]
+     }
+
+var jsonData = pm.response.json();
 
 pm.test('Schema is valid', function () {
-    pm.response.to.have.jsonSchema(schema);
+    pm.expect(tv4.validate(jsonData, schema,true,true)).to.be.true;
 });
 ```
 ***
