@@ -60,6 +60,7 @@ resp.
     "start_qa_salary": 1250
 }
 ```
+***
 
 ###  Проверить статус код 200
 
@@ -68,6 +69,7 @@ pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 ```
+***
 
 ### Проверка структуры json в ответе.
 
@@ -132,6 +134,7 @@ pm.test('Schema is valid', function () {
 });
 ```
 ***
+
 ### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
 ```
 var req = JSON.parse(request.data);
@@ -149,3 +152,4 @@ pm.test("Test u_salary_1.5_year * 4", function () {
     pm.expect(jsonData.person.u_salary_1_5_year).to.eql(sal * 4);
 });
 ```
+***
