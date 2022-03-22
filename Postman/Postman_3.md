@@ -226,3 +226,21 @@ pm.test('Schema is valid', function() {
 });
 ```
 ***
+
+### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент
+
+```
+var req = request.data;
+var sal = +req.salary;
+
+pm.test('Test salary*2', function() {
+    pm.expect(+jsonData.salary[1]).to.eql(sal*2)
+});
+
+pm.test('Test salary*3', function() {
+    pm.expect(+jsonData.salary[2]).to.eql(sal*3)
+});
+```
+***
+
+###
