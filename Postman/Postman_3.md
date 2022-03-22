@@ -132,8 +132,20 @@ pm.test('Schema is valid', function () {
 });
 ```
 ***
-#### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
+### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
 ```
 var req = JSON.parse(request.data);
 var sal = +req.salary 
+
+pm.test("Test qa_salary_after_6_months * 2", function () {
+    pm.expect(jsonData.qa_salary_after_6_months).to.eql(sal*2);
+});
+
+pm.test("Test qa_salary_after_12_months * 2.9", function () {
+    pm.expect(jsonData.qa_salary_after_12_months).to.eql(sal*2.9);
+});
+
+pm.test("Test u_salary_1.5_year * 4", function () {
+    pm.expect(jsonData.person.u_salary_1_5_year).to.eql(sal * 4);
+});
 ```
