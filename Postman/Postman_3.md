@@ -160,7 +160,8 @@ pm.test("Test u_salary_1.5_year * 4", function () {
 pm.environment.set("u_salary_1_5_year", jsonData.person.u_salary_1_5_year);
 ```
 ### POST http://162.55.220.72:5005/new_data
-Request
+
+### Request
 
 ```
 age: int
@@ -169,7 +170,7 @@ name: str
 auth_token
 ```
 
-Response
+### Response
 
 ```
 {'name':name,
@@ -177,7 +178,8 @@ Response
   'salary': [salary, str(salary*2), str(salary*3)]}
 ```
 ***
- Статус код 200
+
+### Статус код 200
 
 ```
  pm.test("Status code is 200", function () {
