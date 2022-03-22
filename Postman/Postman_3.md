@@ -188,3 +188,41 @@ auth_token
     pm.response.to.have.status(200);
 });
 ```
+***
+
+### Проверка структуры json в ответе.
+
+```
+var schema = {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+        },
+          "age":{
+            "type":"number"
+          },
+            "salary":{
+              "type":"array",
+              "items":[
+                {"type":"number"},
+                {"type":"string"},
+                {"type":"string"}
+              ]
+            }
+    },
+      "required":[
+        "name",
+        "age",
+        "salary"
+      ]
+}
+
+var jsonData = pm.response.json();
+
+pm.test('Schema is valid', function() {
+    pm.expect(tv4.validate(jsonData,schema,true,true)).to.be.true;
+});
+```
+***
