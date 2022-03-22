@@ -243,4 +243,17 @@ pm.test('Test salary*3', function() {
 ```
 ***
 
+### Проверить, что 2-й элемент массива salary больше 1-го и 0-го
+
+```
+pm.test('Test compare items (2>1)', function() {
+    pm.expect(+jsonData.salary[2]).to.above(+jsonData.salary[1])
+});
+
+pm.test('Test compare items(2>0)', function() {
+    pm.expect(+jsonData.salary[2]).to.above(jsonData.salary[0])
+});
+```
+***
+
 ###
