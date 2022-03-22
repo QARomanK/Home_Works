@@ -133,3 +133,6 @@ pm.test('Schema is valid', function () {
 ```
 ***
 #### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
+
+var req = JSON.parse(request.data);
+var sal = +req.salary 
