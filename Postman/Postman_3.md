@@ -257,4 +257,39 @@ pm.test("Status code is 200", function () {
 });
 ```
 
-### 
+### Проверка структуры json в ответе.
+
+```
+var schema = {
+  "type":"object",
+    "properties":{
+      "name":{
+        "type":"string"
+      },//name
+        "age":{
+          "type":"number"
+        },//age
+          "daily_food":{
+            "type":"number"
+          },//daily_food
+            "daily_sleep":{
+              "type":"number"
+            }//daily_sleep
+    },//properties
+		"required":[
+          "name",
+          "age",
+          "daily_food",
+          "daily_sleep"
+        ]
+
+}
+
+var jsonData = pm.response.json();
+
+pm.test('Schema is value', function() {
+    pm.expect(tv4.validate(jsonData,schema,true,true)).to.be.true
+});
+```
+
+###
