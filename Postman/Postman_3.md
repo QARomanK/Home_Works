@@ -265,17 +265,17 @@ var schema = {
     "properties":{
       "name":{
         "type":"string"
-      },//name
+      },
         "age":{
           "type":"number"
-        },//age
+        },
           "daily_food":{
             "type":"number"
-          },//daily_food
+          },
             "daily_sleep":{
               "type":"number"
-            }//daily_sleep
-    },//properties
+            }
+    },
 		"required":[
           "name",
           "age",
