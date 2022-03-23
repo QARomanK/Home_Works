@@ -159,7 +159,7 @@ pm.environment.set("u_salary_1_5_year", jsonData.person.u_salary_1_5_year);
 
 ### POST http://162.55.220.72:5005/new_data
 
-### Request
+### Request:
 
 ```
 age: int
@@ -168,7 +168,7 @@ name: str
 auth_token
 ```
 
-### Response
+### Response:
 
 ```
 {'name':name,
