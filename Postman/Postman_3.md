@@ -292,4 +292,19 @@ pm.test('Schema is value', function() {
 });
 ```
 
-###
+### В ответе указаны коэффициенты умножения weight, напишите тесты по проверке правильности результата перемножения на коэффициент.
+
+```
+var req = request.data;
+var weight = req.weight;
+
+pm.test('Test colculate daily_food', function() {
+    pm.expect(jsonData.daily_food).to.eql(weight*0.012)
+});
+
+pm.test('Test colculate daily_sleep', function() {
+    pm.expect(jsonData.daily_sleep).to.eql(weight*2.5)
+});
+```
+***
+
