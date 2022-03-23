@@ -256,4 +256,14 @@ pm.test('Test compare items(2>0)', function() {
 ```
 ***
 
-### {{url}}/test_pet_info
+### POST http://162.55.220.72:5005/test_pet_info
+
+### Статус код 200
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+```
+***
+
+### 
