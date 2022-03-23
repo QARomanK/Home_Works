@@ -250,6 +250,24 @@ pm.test('Test compare items(2>0)', function() {
 
 ### POST http://162.55.220.72:5005/test_pet_info
 
+### Request:
+
+```
+age: int
+weight: int
+name: str
+auth_token
+```
+
+### Response:
+
+```
+{'name': name,
+ 'age': age,
+ 'daily_food':weight * 0.012,
+ 'daily_sleep': weight * 2.5}
+```
+
 ### Статус код 200
 ```
 pm.test("Status code is 200", function () {
