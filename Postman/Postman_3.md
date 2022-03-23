@@ -276,7 +276,7 @@ var schema = {
               "type":"number"
             }
     },
-		"required":[
+	"required":[
           "name",
           "age",
           "daily_food",
