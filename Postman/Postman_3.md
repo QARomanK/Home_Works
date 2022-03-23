@@ -60,7 +60,6 @@ resp.
     "start_qa_salary": 1250
 }
 ```
-***
 
 ###  Проверить статус код 200
 
@@ -69,7 +68,6 @@ pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 ```
-***
 
 ### Проверка структуры json в ответе.
 
@@ -133,7 +131,6 @@ pm.test('Schema is valid', function () {
     pm.expect(tv4.validate(jsonData, schema,true,true)).to.be.true;
 });
 ```
-***
 
 ### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
 ```
@@ -152,7 +149,6 @@ pm.test("Test u_salary_1.5_year * 4", function () {
     pm.expect(jsonData.person.u_salary_1_5_year).to.eql(sal * 4);
 });
 ```
-***
 
 ### Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса http://162.55.220.72:5005/get_test_user 
 
@@ -179,7 +175,6 @@ auth_token
   'age': int(age),
   'salary': [salary, str(salary*2), str(salary*3)]}
 ```
-***
 
 ### Статус код 200
 
@@ -188,7 +183,6 @@ auth_token
     pm.response.to.have.status(200);
 });
 ```
-***
 
 ### Проверка структуры json в ответе.
 
@@ -225,7 +219,6 @@ pm.test('Schema is valid', function() {
     pm.expect(tv4.validate(jsonData,schema,true,true)).to.be.true;
 });
 ```
-***
 
 ### В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент
 
@@ -241,7 +234,6 @@ pm.test('Test salary*3', function() {
     pm.expect(+jsonData.salary[2]).to.eql(sal*3)
 });
 ```
-***
 
 ### Проверить, что 2-й элемент массива salary больше 1-го и 0-го
 
@@ -264,6 +256,5 @@ pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 ```
-***
 
 ### 
