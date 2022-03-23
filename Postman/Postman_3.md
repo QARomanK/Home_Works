@@ -326,3 +326,25 @@ pm.test('Test colculate daily_sleep', function() {
 ```
 ***
 
+### POST http://162.55.220.72:5005/get_test_user
+
+### Request:
+
+```
+age: int
+salary: int
+name: str
+auth_token
+```
+### Response:
+
+```
+{'name': name,
+ 'age':age,
+ 'salary': salary,
+ 'family':{'children':[['Alex', 24],['Kate', 12]],
+ 'u_salary_1.5_year': salary * 4}
+  }
+ ```
+ 
+ 
