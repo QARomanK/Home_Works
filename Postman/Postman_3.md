@@ -353,4 +353,64 @@ pm.test("Status code is 200", function () {
 });
  ```
  
- ### 
+ ### Проверка структуры json в ответе.
+
+```
+var schema = {
+ "$schema": "http://json-schema.org/draft-04/schema#",
+  "type":"object",
+    "properties":{
+      "name":{
+        "type":"string"
+      },//name
+        "age":{
+          "type":"string"
+        },//age
+          "salary":{
+            "type":"number"
+          },//salary
+            "family":{
+              "type":"object",
+                "properties":{
+                   "children":{
+                     "type":"array",
+                       "items":[
+                         {"type":"array",
+                          "items":[
+                            {"type":"string"},
+                            {"type":"number"}
+                          ]
+                         },
+                         {"type":"array",
+                          "items":[
+                            {"type":"string"},
+                            {"type":"number"}
+                          ]
+                         }
+                       ]
+                   },//children
+                     "u_salary_1_5_year":{
+                       "type":"number"
+                     }//u_salary_1.5_year
+                },//properties family
+                  "required":[
+                    "children",
+                    "u_salary_1_5_year"
+                  ]
+            }//family
+    },//properties
+		"required":[
+          "name",
+          "age",
+          "salary",
+          "family"
+        ]
+
+}
+
+var jsonData = pm.response.json();
+
+pm.test('Schema is valid', function() {
+    pm.expect(tv4.validate(jsonData,schema,true,true)).to.be.true
+});
+```
