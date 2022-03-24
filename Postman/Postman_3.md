@@ -346,5 +346,11 @@ auth_token
  'u_salary_1.5_year': salary * 4}
   }
  ```
+ ###  Статус код 200
+ ```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+ ```
  
- 
+ ### 
