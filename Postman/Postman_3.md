@@ -414,3 +414,13 @@ pm.test('Schema is valid', function() {
     pm.expect(tv4.validate(jsonData,schema,true,true)).to.be.true
 });
 ```
+
+### Проверить что занчение поля name = значению переменной name из окружения
+
+```
+var name = pm.environment.get("name");
+
+pm.test('Test compare name', function() {
+    pm.expect(jsonData.name).to.eql(name)
+});
+```
