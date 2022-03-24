@@ -424,3 +424,14 @@ pm.test('Test compare name', function() {
     pm.expect(jsonData.name).to.eql(name)
 });
 ```
+
+### Проверить что занчение поля age в ответе соответсвует отправленному в запросе значению поля age
+
+```
+var req = request.data;
+
+pm.test('Test compare name', function() {
+    pm.expect(jsonData.age).to.eql(req.age)
+});
+```
+***
