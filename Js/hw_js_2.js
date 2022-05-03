@@ -18,11 +18,11 @@ if (/^\s*$/.test(stroka) == true){
     console.log("Вы ввели слишком много символов!");
 } else if (/[A-Za-zА-Яа-яё]/.test(stroka) == false) {
     console.log("Вы не ввели ни одной буквы");
-} else if (/[A-ZА-Я]/.test(stroka) == false) {
+} else if (/[A-ZА-ЯЁ]/.test(stroka) == false) {
     console.log("Должна быть хотя бы одна буква в верхнем регистре");
 } else if (/[0-9]/.test(stroka) == false) {
     console.log("Должна быть хотя бы одна цифра");
-} else if (stroka.search('@') != -1 == false) {
+} else if (stroka.search('@') == -1) {
     console.log("Должна быть хотя бы одна @");
 } else {
     alert("Введены корректные данные: " + stroka);
